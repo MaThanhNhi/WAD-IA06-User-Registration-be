@@ -5,10 +5,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS
+  // Enable CORS with credentials support for future authentication
   app.enableCors({
     origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
-    credentials: true,
+    // credentials: true, // no auth yet
   });
 
   await app.listen(process.env.PORT ?? 3000);
