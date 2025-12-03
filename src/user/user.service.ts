@@ -18,7 +18,6 @@ export class UserService {
       throw new BadRequestException('Email and password are required');
     }
 
-    // For common email formats: mathanh@example.com
     const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
     if (!emailRegex.test(email)) {
       throw new BadRequestException('Invalid email format');
