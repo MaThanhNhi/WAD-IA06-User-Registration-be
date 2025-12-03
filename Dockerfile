@@ -4,6 +4,8 @@ RUN npm install -g pnpm
 FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
+COPY prisma ./prisma
+COPY prisma.config.ts ./
 RUN pnpm install --frozen-lockfile
 
 FROM base AS builder
